@@ -1,0 +1,108 @@
+#App {
+    #Home {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        #formContainer {
+            grid-column: 1 / 24;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2vh;
+            padding-bottom: 2vh;
+            border-bottom: 1px solid lightgrey;
+            .location-search-input {
+                width: 200px;
+                border: none;
+            }
+            .ant-form-horizontal {
+                padding-top: 20px;
+            }
+            #form {
+                display: flex;
+                width: 50vw;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                #location {
+                    width: 50vw;
+                    border: none;
+                    padding-bottom: 10px;
+                }
+                #startDate {
+                    width: 25vw;
+                    padding: 0%;
+                    margin: 0%;
+                    border: none;
+                }
+                #endDate {
+                    width: 22vw;
+                    padding: 0%;
+                    margin: 0%;
+                    border: none;
+                }
+            }
+        }
+        #outerFilterContainer {
+            grid-column: 4 / 21;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            #filterContainer {
+                padding-top: 50px;
+                display: grid;
+                row-gap: 10px;
+                grid-template-columns: repeat(7, 1fr);   
+                border-bottom: 1px solid lightgray;    
+                padding-bottom: 25px; 
+                @media screen and (min-width: 768px) {
+                    width: 50%;
+                    padding: 20px;
+                }
+                .displayCar {
+                    grid-column: 1 / 8;
+                    padding-bottom: 15px;
+    
+                }
+                .displayName {
+                    grid-column: 1 / 8;
+                    font-size: 100%;
+    
+                }
+                .displayRating {
+                    grid-column: 1 / 2;
+                    font-size: 14px;
+    
+                }
+                .displayTrips {
+                    grid-column: 2 / 4;
+                    font-size: 14px;
+    
+                }
+                .displaySafety {
+                    grid-column: 4 / 6;
+                    font-size: 12px;
+                }
+                .displayDelivery {
+                    grid-column: 6 / 8;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    #outerContainer {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        #CenterContainer {
+            grid-column: 4 / 20;
+            margin: auto;
+            width: 50%;
+            padding-top: 50px;
+            .title {
+                text-align: center;
+                padding-bottom: 50px;
+            }
+        }
+    }
+}
