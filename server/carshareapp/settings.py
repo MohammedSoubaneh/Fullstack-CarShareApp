@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 from datetime import timedelta
@@ -85,8 +86,12 @@ WSGI_APPLICATION = 'carshareapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'carshareapp', 
+        'USER': 'postgres', 
+        'PASSWORD': 'Naruto!123',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
@@ -139,9 +144,9 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
 
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # )
 }
 
 CORS_ALLOWED_ORIGINS = [
@@ -196,3 +201,6 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
